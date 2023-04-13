@@ -1,0 +1,41 @@
+Optimizing Customer Retention in the Google Merchandise Store
+
+Background
+The Google Merchandise Store is an e-commerce platform that sells Google-branded products. Less than 5% of online visitors make a purchase from the Google Merchandise Store on Google Marketplace. Research shows that approximately 90% of purchases do not happen during an initial visit to an e-commerce website. Furthermore, repeat customers spend 33% more than new customers do. Additionally, only about 20% of existing customers account for approximately 80% of future profits. This underscores the importance of getting consumers to make repeat purchases and to optimize customer retention strategies in order to maintain and grow customer base and market share.
+The Google dataset used in this project includes customer transaction data from August 1, 2016 and August 1, 2017. Less than 2% of visitors made a purchase on a return visit to the Google Merchandise Store. One of the main reasons for visitors browsing an e-commerce store, rather than making a purchase, is due to comparison shopping across multiple websites looking for the best possible deal or a very similar product.
+One approach to increase follow-up customer purchases is to develop targeted promotions based on a consumer’s likelihood of making a purchase during a future visit to the merchandise store. Knowing this likelihood is useful in determining which visitors the marketing team should be focused on and, subsequently, how much funding can be allocated to communicating with those visitors. Offers can include: 
+•	Personalized Item Discounts
+•	Loyalty Points
+•	Personalized Customer Coupons 
+•	Free Shipping Promotions
+
+Analysis Plan
+The objective of this project is to increase the number of first-time visitors to the merchandise store who are converted into new or repeat customers. We want to identify the visitors with low, medium and high likelihoods of making a purchase during a first or return visit to the store. We are looking to predict the likelihood (or propensity) of a purchase during a future visit.
+A Machine Learning (ML) model will be trained using attributes (features) of customer visits and it will predict visitors' propensity to make a purchase on a return visit to the store. Attributes regarding visits made to the store site are retrieved from Google Analytics (GA) tracking data, embedded in the store's website to anonymously track visitor interactions on the site. The best-performing trained ML model will be the one that can make this prediction with the highest accuracy or additional evaluation metrics. This application of ML is called propensity modeling. 
+Binary prediction outcomes:
+1.	The visitor WILL make a purchase on a return visit.
+2.	The visitor WILL NOT make a purchase on a return visit.
+
+Data
+Google Analytics Google Merchandise Store Dataset  
+Documentation 
+
+Visit data for the merchandise store is available for the period of August 1, 2016 to August 1, 2017. This data includes the following variables:
+1.	visitor ID
+2.	visit `date`
+3.	visit `datetime`
+4.	Actions Performed During Visit
+a.	Add To Cart
+b.	Remove From Cart
+c.	Make Purchase
+d.	View Product Details
+5.	Total Time Spent Viewing Pages During Each Visit
+
+Analysis Workflow Overview
+Summary of workflow:
+1.	Train ML model using historical data for consumer first visits – Training data
+2.	Use trained model to predict probabilities for first visit of visitors that are not part of the training data – Unseen Data
+3.	Use predicted probabilities to assign audience cohorts (test or control) to all visitors in the unseen data
+4.	Build a brief profile of the visitors in the test cohort in unseen data
+a.	When building a marketing strategy, we are not allowed to look at the control cohort and so the profile will be required for the test cohort
+5.	Provide audience test cohorts and their associated profile summaries to the marketing team
